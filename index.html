@@ -2,14 +2,16 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
-  <title>RPG 遊戲 + AI 助手</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
+  />
+  <title>RPG + AI</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div class="container">
-    <div class="panel left-panel">
-      <div class="panel-header">RPG 遊戲區</div>
+    <div class="left-panel">
       <iframe
         class="content-frame"
         src="./game/index.html"
@@ -18,8 +20,7 @@
       ></iframe>
     </div>
 
-    <div class="panel right-panel">
-      <div class="panel-header">AI 助手區</div>
+    <div class="right-panel">
       <iframe
         class="content-frame"
         src="https://aintcu.ntcu.edu.tw:5170/chatbot-iframe/1d34b252-40d8-4ef4-9583-9981d78e1337"
@@ -27,5 +28,15 @@
       ></iframe>
     </div>
   </div>
+
+  <script>
+    function setAppHeight() {
+      document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+    }
+
+    window.addEventListener("resize", setAppHeight);
+    window.addEventListener("orientationchange", setAppHeight);
+    setAppHeight();
+  </script>
 </body>
 </html>
